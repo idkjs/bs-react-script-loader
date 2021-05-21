@@ -1,14 +1,20 @@
 const path = require('path');
-const outputDir = path.join(__dirname, 'build/');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const outputDir = path.join(__dirname, 'build');
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: './demo/Index.bs.js',
   mode: isProd ? 'production' : 'development',
+    plugins: [
+    new HtmlWebpackPlugin({
+      title: 'BsReactScriptLoader',
+      template: './demo/index.html'
+    })
+  ],
   output: {
     path: outputDir,
-    publicPath: outputDir,
-    filename: 'Index.js',
+    filename: '[name].bundle.js',
   },
 };
+

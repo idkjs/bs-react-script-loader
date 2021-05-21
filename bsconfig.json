@@ -1,28 +1,28 @@
 {
   "name": "bs-react-script-loader",
   "reason": {
-    "react-jsx": 2
+    "react-jsx": 3
   },
   "sources": [
     {
-      "dir" : "src",
-      "subdirs" : true
+      "dir": "src",
+      "subdirs": true
     },
     {
-      "dir" : "demo",
-      "subdirs" : true
+      "dir": "demo",
+      "subdirs": true,
+      "dev":true
     }
   ],
-  "package-specs": [{
-    "module": "commonjs",
-    "in-source": true
-  }],
+  "package-specs": [
+    {
+      "module": "commonjs",
+      "in-source": true
+    }
+  ],
   "suffix": ".bs.js",
   "namespace": true,
-  "bs-dependencies": [
-    "reason-react"
-  ],
-  "refmt": 3,
+  "bs-dependencies": [ "reason-react", "reason-react-compat", "reason-react-update" ],
   "warnings": {
     "error": "+5"
   }
